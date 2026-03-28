@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: cke_user
+      POSTGRES_PASSWORD: cke_pass
+      POSTGRES_DB: cke_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./uploads:/app/uploads
+      - ./chroma_store:/app/chroma_store
+      - ./logs:/app/logs
+
+volumes:
+  postgres_data:

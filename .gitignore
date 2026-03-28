@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+cke_temp_env/
+test.db
+
+# Environment
+.env
+
+# Data (don't commit uploads or vector store)
+uploads/
+chroma_store/
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# Alembic
+alembic/versions/*.py
+
+# OS
+.DS_Store
+Thumbs.db
+.env
