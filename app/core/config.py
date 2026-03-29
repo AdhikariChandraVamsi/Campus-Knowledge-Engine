@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     CHROMA_COLLECTION_NAME: str = "academic_chunks"
 
     # Gemini
-    GEMINI_API_KEY: str = "AIzaSyCEz0ED5FDnEJwpvpB2ThGOmqybSSQRYzk"
+    GEMINI_API_KEY: str = ""
 
     # Embedding
     EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
